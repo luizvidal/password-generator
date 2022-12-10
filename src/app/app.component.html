@@ -1,70 +1,39 @@
-<!-- <h1>Password Generator</h1>
-
-<div>
-  <label for="">Enter length</label>
-  <input type="text" #input (input)="onChangeLength(input.value)" />
-</div>
-
-<div>
-  <label for="">Use Letters</label>
-  <input type="checkbox" (change)="onChangeUseLetters()" name="" id="" />
-</div>
-
-<div>
-  <label for="">Use Numbers</label>
-  <input type="checkbox" (change)="onChangeUseNumbers()" name="" id="" />
-</div>
-
-<div>
-  <label for="">Use Symbols</label>
-  <input type="checkbox" (change)="onChangeUseSymbols()" name="" id="" />
-</div>
-
-<div>
-  <button
-    (click)="onButtonClick()"
-    [disabled]="
-      !(length && (includeLetters || includeNumbers || includeSymbols))
-    "
-    class="button is-link is-full"
-  >
-    Generate!
-  </button>
-</div>
-
-<div>
-  <label for="">Your Password</label>
-  <input type="text" [value]="password" />
-</div> -->
-
-<div class="container">
+<div class="container" style="margin-top: 10rem;">
   <div class="columns is-centered">
     <div class="box column is-one-third">
-      <h1 class="title has-text-centered">Password Generator</h1>
+      <h1 class="title has-text-centered" style="color: #2b09e7;">Password Generator</h1>
 
       <div class="field">
         <label>Length</label>
-        <input class="input" type="text" #input (input)="onChangeLength(input.value)" />
+        <input
+          class="input"
+          type="text"
+          #input
+          (input)="onChangeLength(input.value)"
+        />
       </div>
 
-      <div class="field" style="display:flex; flex-direction:column; gap:.5rem;">
+      <div
+        class="field"
+        style="display: flex; flex-direction: column; gap: 0.5rem"
+      >
         <div class="control">
           <label class="checkbox">
-            <input type="checkbox" (change)="onChangeUseLetters()"/>
+            <input type="checkbox" (change)="onChangeUseLetters()" />
             Use Letters
           </label>
         </div>
 
         <div class="control">
           <label class="checkbox">
-            <input type="checkbox" (change)="onChangeUseNumbers()"/>
+            <input type="checkbox" (change)="onChangeUseNumbers()" />
             Use Numbers
           </label>
         </div>
 
         <div class="control">
           <label class="checkbox">
-            <input type="checkbox" (change)="onChangeUseSymbols()"/>
+            <input type="checkbox" (change)="onChangeUseSymbols()" />
             Use Symbols
           </label>
         </div>
@@ -83,10 +52,9 @@
       </div>
 
       <div class="box mt-3" *ngIf="password">
-        <label>Your Password!</label>
-        <input disabled class="input" [value]="password">
+        <label class="mb-2">Your Password!</label>
+        <p style="color: #2b09e7;">{{ password }}</p>
       </div>
-
     </div>
   </div>
 </div>

@@ -26,9 +26,12 @@ export class AppComponent {
   }
 
   onChangeLength(value: string) {
-    const parsedValue = parseInt(value);
+    const parsedValue = Number(value);
     if (!isNaN(parsedValue)) {
       this.length = parsedValue;
+      console.log(this.length)
+    } else {
+      this.length = 0;
     }
   }
 
@@ -44,9 +47,8 @@ export class AppComponent {
     for (let i = 0; i < this.length; i++) {
       const index = Math.floor(Math.random() * validChars.length);
       generatedPassword += validChars[index];
-
     }
+    console.log(this.length);
     this.password = generatedPassword;
-    console.log(this.password)
   }
 }
